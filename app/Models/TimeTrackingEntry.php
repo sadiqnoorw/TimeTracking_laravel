@@ -3,9 +3,12 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class TimeTrackingEntry extends Model
 {
+    use HasFactory;
+
     protected $fillable = [
         'user_id', 'type', 'start_time', 'end_time',
         'break_reason_id', 'work_type_id'

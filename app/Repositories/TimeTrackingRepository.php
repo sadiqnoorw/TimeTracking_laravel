@@ -20,12 +20,13 @@ class TimeTrackingRepository implements TimeTrackingRepositoryInterface
 
     public function stopWork($employeeId)
     {
-        return TimeTrackingEntry::where('user_id', $employeeId)
+        $entry = TimeTrackingEntry::where('user_id', $employeeId)
             ->where('type', 'work')
             ->whereNull('end_time')
             ->latest()
-            ->first()
-            ->update(['end_time' => now()]);
+            ->first();
+
+        return $entry ? $entry->update(['end_time' => now()]) : false;
     }
 
     public function startBreak($employeeId, $reasonId)
@@ -40,17 +41,18 @@ class TimeTrackingRepository implements TimeTrackingRepositoryInterface
 
     public function stopBreak($employeeId)
     {
-        return TimeTrackingEntry::where('user_id', $employeeId)
+        $entry = TimeTrackingEntry::where('user_id', $employeeId)
             ->where('type', 'break')
             ->whereNull('end_time')
             ->latest()
-            ->first()
-            ->update(['end_time' => now()]);
+            ->first();
+
+        return $entry ? $entry->update(['end_time' => now()]) : false;
     }
 
     public function getEntriesByDate($employeeId, $date)
     {
-        return TimeTrackingEntry::where('employee_id', $employeeId)
+        return TimeTrackingEntry::where('user_id', $employeeId)
             ->whereDate('start_time', $date)
             ->get();
     }
