@@ -4,6 +4,9 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
+use App\Repositories\Contracts\TimeTrackingRepositoryInterface;
+use App\Repositories\TimeTrackingRepository;
+
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -11,7 +14,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        $this->app->bind(TimeTrackingRepositoryInterface::class, TimeTrackingRepository::class);
     }
 
     /**
