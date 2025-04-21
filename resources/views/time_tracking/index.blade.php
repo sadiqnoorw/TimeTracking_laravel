@@ -96,7 +96,6 @@
                         method: method,
                         data: data,
                         success: function (response) {
-                            alert(response.message);
 
                             switch (response.action) {
                                 case 'disable_start_work':
