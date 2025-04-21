@@ -10,6 +10,7 @@ A web-based time tracking application built to help employees record their worki
 - ✅ Form button state persistence on page refresh (based on database state)
 - ✅ Report section displaying total Work and Break times in `HH:MM:SS` format
 - ✅ Clean code structure using Laravel Repository Pattern
+- ✅ Comprehensive unit test coverage 
 
 
 ---
@@ -57,9 +58,21 @@ A web-based time tracking application built to help employees record their worki
     php artisan db:seed
     ```
 
+7. **Testing**
+The application includes comprehensive unit tests for the time tracking repository. To run the tests:
+
+    1. Run the time tracking tests:
+        ```bash
+        php artisan test --filter=TimeTrackingRepositoryTest
+        ```
+
+    2.  Or run all tests:
+        ```bash
+        php artisan test
+        ```
 
 
-7. **Run the Application**
+8. **Run the Application**
     ```bash
     php artisan serve
     ```
@@ -84,36 +97,36 @@ Below is the complete user journey explained with screenshots.
 ## 🏠 1. Landing Page
 When a user visits the system, they’re welcomed by the landing page.
 
-<img src="resources/screenshots/main-page.png" alt="Dashboard Screenshot" width="500">
+<img src="resources/screenshots/main-page.png" alt="Dashboard Screenshot" width="700">
 
 
 ## 📝 2. Register
 If the user doesn’t have an account, they can register by filling out the registration form.
 
-<img src="resources/screenshots/register.png" alt="Dashboard Screenshot" width="500">
+<img src="resources/screenshots/register.png" alt="Dashboard Screenshot" width="700">
 
 
 ## 🔑 3. Log In
 After successful registration, the user can log in using their credentials.
 
-<img src="resources/screenshots/login.png" alt="Login Screen" width="500">
+<img src="resources/screenshots/login.png" alt="Login Screen" width="700">
 
 
 ## 📊 4. Dashboard (Before Starting Work)
 Upon logging in, the user is redirected to the dashboard. Here, no work session has started yet.
 
-<img src="resources/screenshots/dashboord.png" alt="Login Screen" width="500">
+<img src="resources/screenshots/dashboord.png" alt="Login Screen" width="700">
 
 
 ## 🟢 5. Start Work
 The user clicks on Start Work to begin their working session.
 
-<img src="resources/screenshots/dashboord-after-start-working.png" alt="Login Screen" width="500">
+<img src="resources/screenshots/dashboord-after-start-working.png" alt="Login Screen" width="700">
 
 
 ## 📑 6. View Report
 At any time, the user can go to the Reports page to view a summary of their daily working hours and breaks.
 
-<img src="resources/screenshots/Daily-Time-Tracking-Report.png" alt="Login Screen" width="500">
+<img src="resources/screenshots/Daily-Time-Tracking-Report.png" alt="Login Screen" width="700">
 
 
